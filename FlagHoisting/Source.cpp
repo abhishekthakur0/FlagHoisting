@@ -1,10 +1,118 @@
-#include<gl/freeglut.h>
+#include<GL/glut.h>
 #include<stdio.h>
 #include<math.h>
 #include<stdlib.h>
 
-int i, j = 0;
+int i, j = 0,flag = 0;
 float w = 0.0, h = 0.0, x, y, z;
+void setOrthographicProjection()
+{
+	glMatrixMode(GL_PROJECTION);
+	glPushMatrix();
+	glLoadIdentity();
+	gluOrtho2D(0, 800, 0, 600);
+	glClearColor(1.0, 1.0, 1.0, 1.0);
+	glMatrixMode(GL_MODELVIEW);
+}
+void marquee()
+{
+	int z = 30;
+	z--;
+	if (z == 30)
+		z = 600;
+}
+void screen1()
+{
+	const char a1[] = " Graphical Implementation of ";
+	const char a2[] = "\b\b\b\b\b\b\b\b\b\b FLAG HOISTING";
+	const char a3[] = " ";
+	const char a4[] = "SUBMITTED BY";
+	const char a5[] = "ABHISHEK THAKUR(1ST16CS009) \b\b\b\b\b\b\b\b\b\b\b\b	ABHIJEET BHARTHI(1ST16CS004)";
+	const char a7[] = "Under the guidance of";
+	const char a8[] = "Ms.VANI B ";
+	const char a9[] = "Associate. Professor";
+	const char a10[] = "SAIT,MS PALYA,Bangalore";
+	const char a11[] = "Press W to watch ";
+	int i;
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	setOrthographicProjection();
+	glPushMatrix();
+	glLoadIdentity();
+	glClearColor(20.0 / 256.0, 26.0 / 256.0, 26.0 / 256.0, 0.0);
+	glColor3f(256.0 / 256.0, 100.0 / 256.0, 0.0);
+	glRectf(0, 0, 800, 10);
+	glColor3f(256.0 / 256.0, 100.0 / 256.0, 0.0);
+	glRectf(0, 35, 800, 45);
+	glColor3f(250.0 / 256.0, 200.0 / 255.0, 1.0);
+	glColor3f(256.0 / 256.0, 100.0 / 256.0, 0.0);
+	glRectf(0, 0, 7, 700);
+	glColor3f(256.0 / 256.0, 100.0 / 256.0, 0.0);
+	glRectf(25, 0, 32, 700);
+	glColor3f(0.2, 0.8, 0.2);
+	glRectf(10, 15, 22, 30);
+	glRectf(10, 517, 22, 532);
+	glRectf(10, 544, 22, 559);
+	glRectf(10, 571, 22, 586);
+	glColor3f(256.0 / 256.0, 100.0 / 256.0, 0.0);
+	glRectf(768, 0, 775, 700);
+	glColor3f(256.0 / 256.0, 100.0 / 256.0, 0.0);
+	glRectf(792, 0, 810, 700);
+	glColor3f(250.0 / 256.0, 200.0 / 255.0, 1.0);
+	glColor3f(256.0 / 256.0, 100.0 / 256.0, 0.0);
+	glRectf(0, 590, 800, 710);
+	glColor3f(256.0 / 256.0, 100.0 / 256.0, 0.0);
+	glRectf(0, 563, 800, 570);
+	glColor3f(0.2, 0.8, 0.2);
+	glRectf(779, 15, 789, 33);
+	glRectf(779, 50, 789, 65);
+	glRectf(779, 75, 789, 90);
+	glRectf(779, 571, 789, 586);
+	glColor3f(1.0, 0.5, 0.0);
+	glRasterPos2f(270.0, 500.0);
+	for (i = 0; i < sizeof(a1); i++)
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, a1[i]);
+	glColor3f(1.0, 0.5, 0.0);
+	glRasterPos2f(270.0, 475.0);
+	for (i = 0; i < sizeof(a2); i++)
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, a2[i]);
+	glColor3f(1.0, 0.5, 0.0);
+	glRasterPos2f(270.0, 450.0);
+	for (i = 0; i < sizeof(a3); i++)
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, a3[i]);
+	glColor3f(1.0, 0.5, 0.0);
+	glRasterPos2f(335.0, 370.0);
+	for (i = 0; i < sizeof(a4); i++)
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, a4[i]);
+	glColor3f(1.0, 0.5, 0.0);
+	glRasterPos2f(80.0, 290.0);
+	for (i = 0; i < sizeof(a5); i++)
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, a5[i]);
+	glColor3f(1.0, 0.5, 0.0);
+	glRasterPos2f(300.0, 220.0);
+	for (i = 0; i < sizeof(a7); i++)
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, a7[i]);
+	glColor3f(1.0, 0.5, 0.0);
+	glRasterPos2f(90.0, 200.0);
+	for (i = 0; i < sizeof(a8); i++)
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, a8[i]);
+	glColor3f(1.0, 0.5, 0.0);
+	glRasterPos2f(90.0, 180.0);
+	for (i = 0; i < sizeof(a9); i++)
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, a9[i]);
+	glColor3f(1.0, 0.5, 0.0);
+	glRasterPos2f(90.0, 150.0);
+	for (i = 0; i < sizeof(a10); i++)
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, a10[i]);
+	glColor3f(1.0, 0.5, 0.0);
+	glRasterPos2f(300.0, 100.0);
+	for (i = 0; i < sizeof(a11); i++)
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, a11[i]);
+	glPopMatrix();
+	// resetPerspectiveProjection();
+	glutIdleFunc(marquee);
+	glutSwapBuffers();
+	glFlush();
+}
 void filcircle(float x, float y, float r)
 {
 	float angle = 0;
@@ -150,10 +258,6 @@ void sun()
 }
 
 
-
-
-
-
 void draw_flag()
 {
 
@@ -182,6 +286,8 @@ void draw_flag()
 	//hook
 	glColor3f(0.0, 0.0, 0.0);
 	draw_pixels(-80, 55);
+
+
 }
 
 
@@ -257,7 +363,6 @@ void reshape(int w, int h)
 			100.0*(GLfloat)w / (GLfloat)h, -80.0, 80.0);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-
 	glutPostRedisplay();
 
 }
@@ -295,7 +400,7 @@ void salute()
 	}
 
 	glColor3f(1, 1, 1);
-	printc(17, 40,(char*)"VANDE MATHARAM");
+	printc(17, 40, (char*)"VANDE MATRAM");
 
 
 }
@@ -457,17 +562,19 @@ void move_person()
 
 void display()
 {
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	sun();
 	draw_flag();
 	draw_people();
 }
 
-
-
-
 void keys(unsigned char key, int x, int y)
 {
+	if ((key == 'w' || key == 'W') && (flag == 0)) {
+		glutPostRedisplay();
+		glClear( GL_COLOR_BUFFER_BIT|| GL_COLOR_BUFFER_BIT);
+		glutDisplayFunc(display);
+	}
 	if (key == 's' || key == 'S')
 		move_person();
 	if (key == 27)
@@ -478,13 +585,13 @@ int main(int argc, char**argv)
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
-	glutInitWindowSize(1000, 700);
+	glutInitWindowSize(1100, 800);
 	glutInitWindowPosition(0, 0);
 	glutCreateWindow(" :-)flaghoisting ceremony :-)");
-	glutDisplayFunc(display);
+	glutKeyboardFunc(keys);
+	screen1();
 	glutReshapeFunc(reshape);
 	init();
-	glutKeyboardFunc(keys);
 	glutMainLoop();
 	return 0;
 }
