@@ -12,3 +12,4 @@ Microsoft SDK provides gl & glu libraries but not glut, so you must add it exter
 
 To download the glut libraries, copy and paste this URL : http://www.mediafire.com/file/cmlnr0pj0pyha5d/Glew+and+Glut.zip And then follow this video : https://youtu.be/8p76pJsUP44
 
+
